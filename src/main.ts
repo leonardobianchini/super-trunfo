@@ -1,9 +1,11 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
+import { ModelNotFoundExceptionFilter } from './exception-filters/model-not-found.exception-filters';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.useGlobalFilters(new ModelNotFoundExceptionFilter());
 
   const config = new DocumentBuilder()
     .setTitle('Super trunfo api')
