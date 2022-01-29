@@ -17,8 +17,11 @@ export class CreateCarsTable1643043520178 implements MigrationInterface {
                     {
                         name: 'name',
                         type: 'varchar'
-                    }
-                    ,
+                    },
+                    {
+                        name: 'type',
+                        type: 'varchar'
+                    },
                     {
                         name: 'power',
                         type: 'varchar'
